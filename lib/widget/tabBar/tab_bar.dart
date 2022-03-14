@@ -79,10 +79,9 @@ class Tabbar extends StatelessWidget {
                       start(),
                       //Container(child: Icon(Icons.directions_bike)),
                       newBook(),
-                      // BookCategory(),
+                      BookCategory(),
                      freeBook(),
                       
-                      Container(child: Icon(Icons.directions_bike)),
                       Container(child: Icon(Icons.directions_bike)),
                       Container(child: Icon(Icons.directions_bike)),
                     ],

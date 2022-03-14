@@ -1,6 +1,5 @@
 import 'package:book_mart/screen/auth/sign_in.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../auth/sign_up.dart';
 
@@ -34,12 +33,12 @@ class _WellcomePageState extends State<WellcomePage> {
             children: [
               Text(
                 "Buy & Read",
-                style: GoogleFonts.dosis(
+                style: TextStyle(
                     fontSize: 30, fontWeight: FontWeight.w500, color: Color(0xff064625)),
               ),
               Text(
                 "A diverse world of literary fascination awaits you",
-                style: GoogleFonts.dosis(
+                style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
                   color: Color(0xff085e32)
