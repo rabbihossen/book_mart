@@ -1,3 +1,6 @@
+import 'package:book_mart/screen/book-category_details.dart';
+import 'package:book_mart/screen/book_details.dart';
+import 'package:book_mart/widget/tabBar/bd.dart';
 import 'package:flutter/material.dart';
 
 import '../model/all-book.dart';
@@ -20,13 +23,19 @@ class BooksWidget extends StatelessWidget {
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(5),
-                      child: Image.asset(
-                        booksData[index].image,
-                        height: 160,
-                        width: 105,
-                        fit: BoxFit.cover,
+                    
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>BookDetails(recieveData: booksData[index], bookList: booksData,)));
+                      },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(5),
+                        child: Image.asset(
+                          booksData[index].image,
+                          height: 160,
+                          width: 105,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     Padding(

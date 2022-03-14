@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../screen/cart.dart';
 import '../screen/library.dart';
+import '../screen/profile.dart';
 import 'tabBar/tab_bar.dart';
 
 class bottomNavBar extends StatefulWidget {
@@ -21,8 +22,7 @@ class _bottomNavBarState extends State<bottomNavBar> {
 
     LibraryPage(),
     CartPage(),
-    Text('Profile Page',
-        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+    Profile(),
   ];
 
   void _onItemTapped(int index) {
