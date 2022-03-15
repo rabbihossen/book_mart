@@ -25,16 +25,13 @@ Widget freeBook() {
                         children: [
                           ClipRRect(
                             borderRadius: BorderRadius.circular(5),
-                            child: Image.asset(FreeBook[index].imgageUrl,height:160, width: 105,fit: BoxFit.cover,),
+                            child: Image.asset(FreeBook[index].image,height:160, width: 105,fit: BoxFit.cover,),
                           ),
                           SizedBox(height: 10,),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Wrap(
-                                  children:
-                                  List.generate(5, (index) => Icon(Icons.star,color: Color(0xff89dad0),size: 15,))
-                              ),
+                            
                               Text(FreeBook[index].bookName,style: TextStyle(fontWeight: FontWeight.bold),),
                               Text(FreeBook[index].authorName,style: TextStyle(color: Colors.grey),),
                               Text(FreeBook[index].price),

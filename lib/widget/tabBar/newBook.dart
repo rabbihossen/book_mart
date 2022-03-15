@@ -1,11 +1,19 @@
-// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, sized_box_for_whitespace
-
+import 'package:book_mart/screen/book_details.dart';
 import 'package:flutter/material.dart';
 
 import '../../data/tabbarElement/newBook.dart';
 
-Widget newBook() {
-  return Container(
+class newBook extends StatefulWidget {
+  const newBook({ Key? key }) : super(key: key);
+
+  @override
+  State<newBook> createState() => _newBookState();
+}
+
+class _newBookState extends State<newBook> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
         child: ListView(
           children: [
             Container(
@@ -26,16 +34,12 @@ Widget newBook() {
                         children: [
                           ClipRRect(
                             borderRadius: BorderRadius.circular(5),
-                            child: Image.asset(NewBook[index].imgageUrl,height:160, width: 105,fit: BoxFit.cover,),
+                            child: Image.asset(NewBook[index].image,height:160, width: 105,fit: BoxFit.cover,),
                           ),
                           SizedBox(height: 10,),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Wrap(
-                                  children:
-                                  List.generate(5, (index) => Icon(Icons.star,color: Color(0xff89dad0),size: 15,))
-                              ),
                               Text(NewBook[index].bookName,style: TextStyle(fontWeight: FontWeight.bold),),
                               Text(NewBook[index].authorName,style: TextStyle(color: Colors.grey),),
                               Text(NewBook[index].price),
@@ -49,4 +53,5 @@ Widget newBook() {
           ],
         ),
       );
+  }
 }

@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, duplicate_ignore, avoid_unnecessary_containers
 
+import 'package:book_mart/model/all-book.dart';
+import 'package:book_mart/widget/tabBar/popularBook.dart';
 import 'package:flutter/material.dart';
 
 import '../book_category_list.dart';
@@ -8,6 +10,9 @@ import 'newBook.dart';
 import 'start.dart';
 
 class Tabbar extends StatelessWidget {
+  const Tabbar({
+    Key? key,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -29,7 +34,7 @@ class Tabbar extends StatelessWidget {
                         Icons.search,
                         color: Colors.black,
                       )),
-                      IconButton(
+                  IconButton(
                       onPressed: () {},
                       icon: Icon(
                         Icons.notifications_active,
@@ -64,7 +69,6 @@ class Tabbar extends StatelessWidget {
                       Tab(
                         text: "জনপ্রিয় বই",
                       ),
-                     
                       Tab(
                         text: "প্রকাশক",
                       ),
@@ -77,12 +81,10 @@ class Tabbar extends StatelessWidget {
                   child: TabBarView(
                     children: [
                       start(),
-                      //Container(child: Icon(Icons.directions_bike)),
                       newBook(),
                       BookCategory(),
-                     freeBook(),
-                      
-                      Container(child: Icon(Icons.directions_bike)),
+                      freeBook(),
+                      PopularBooks(),
                       Container(child: Icon(Icons.directions_bike)),
                     ],
                   ),

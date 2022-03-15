@@ -1,31 +1,22 @@
-import 'package:book_mart/model/all-book.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class BookCategoryDetails extends StatelessWidget {
+import '../../data/tabbarElement/popular.dart';
 
-  //final String headerTitle;
-  final List<AllBook> books;
-
-  const BookCategoryDetails({Key? key, required this.books}) : super(key: key);
+class PopularBooks extends StatelessWidget {
+  const PopularBooks({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("fg"),
-        backgroundColor: Color(0xff0d964c),
-      ),
-      body: Container(
+    return Container(
         child: ListView(
           children: [
             Container(
-              padding: EdgeInsets.only(top: 20),
+              padding: EdgeInsets.only(bottom: 210),
               //height: ,
               child: GridView.builder(
                   physics: BouncingScrollPhysics(),
                   shrinkWrap: true,
-                  itemCount: 5,
+                  itemCount: Popular.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
                     mainAxisExtent: 250,
@@ -37,16 +28,15 @@ class BookCategoryDetails extends StatelessWidget {
                         children: [
                           ClipRRect(
                             borderRadius: BorderRadius.circular(5),
-                            child: Image.asset(books[index].image,height:160, width: 105,fit: BoxFit.cover,),
+                            child: Image.asset(Popular[index].image,height:160, width: 105,fit: BoxFit.cover,),
                           ),
                           SizedBox(height: 10,),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              
-                              Text(books[index].bookName,style: TextStyle(fontWeight: FontWeight.bold),),
-                              Text(books[index].authorName,style: TextStyle(color: Colors.grey),),
-                              Text(books[index].price),
+                              Text(Popular[index].bookName,style: TextStyle(fontWeight: FontWeight.bold),),
+                              Text(Popular[index].authorName,style: TextStyle(color: Colors.grey),),
+                              Text(Popular[index].price),
                             ],
                           )
                         ],
@@ -56,7 +46,6 @@ class BookCategoryDetails extends StatelessWidget {
             )
           ],
         ),
-      ),
-    );
+      );
   }
 }

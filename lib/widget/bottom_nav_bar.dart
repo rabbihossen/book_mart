@@ -1,14 +1,17 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors, prefer_final_fields
 
+import 'package:book_mart/data/book_category.dart';
 import 'package:flutter/material.dart';
 
+import '../model/all-book.dart';
 import '../screen/cart.dart';
 import '../screen/library.dart';
 import '../screen/profile.dart';
 import 'tabBar/tab_bar.dart';
 
 class bottomNavBar extends StatefulWidget {
-  const bottomNavBar({Key? key}) : super(key: key);
+  
+  const bottomNavBar({Key? key, }) : super(key: key);
 
   @override
   State<bottomNavBar> createState() => _bottomNavBarState();
